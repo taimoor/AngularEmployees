@@ -1,0 +1,51 @@
+:::::Incident Reporting/NCR Report:::
+
+Ability to create 20 number of incident report template:
+ Provide us all 20 templates we will implement the logic at server then anyone can use those templates to generate reports
+
+Dynamic fields and format 
+	With given 	
+Report on time range, fields (incident type, contract, nature of injury, body parts affected, source of injury, relation of employee
+
+
+Report in pdf & word both
+
+Report oh how many types/templates are raise in time period per site/department
+
+Assigning a template to dept./sites and users
+
+
+First approach:::
+Template show and download
+
+1. show only dynamic fields in template , where user can add remove options
+2. show preview to user to see dynamic field changes
+	a. to preview template we need all fields of template.
+	b. Need to generate html view for template
+	c. Only dynamic field content will be generated rest of html will be static
+
+3. user want to keep track of incident reports then add dropbox in incident reports to select template type.
+	a. show template specific fields and duplicate fields with  prefilled data
+	b. Need to create separate table for each template to store data regarding report of that template for future usage.
+	c. 
+
+4. user can download pdf template
+
+
+
+To Create/Edit report
+1. select type (templated) of report
+2. show fields for that report
+3. Create separate table for each report
+4. Associate each report with incident report
+5. by default preview report to user
+6. on click edit show fields to edit
+
+
+
+notify by
+designation
+phone
+
+report to
+report by
