@@ -18,7 +18,7 @@ export class EmployeeListComponent implements OnInit{
 		
 	}
 	ngOnInit(){
-		this.employees = this._employeeService.getEmployees();
+		this._employeeService.getEmployees().subscribe((employeeData)=> this.employees = employeeData);
 	}
 
 	trackByEmpCode(index: number, employee: any): string{

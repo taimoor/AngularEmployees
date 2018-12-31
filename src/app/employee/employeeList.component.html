@@ -1,5 +1,5 @@
 <br/>
-<employee-count [all]="getEmployeeCount()"
+<employee-count *ngIf="employees" [all]="getEmployeeCount()"
 				[male]="getEmployeeCount('Male')"
 				[female]="getEmployeeCount('Female')"
 				(employeeCountRadioChangeEvent)="employeeCountRadioChangeHandler($event)"
