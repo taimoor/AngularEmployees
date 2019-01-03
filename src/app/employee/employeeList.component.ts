@@ -6,19 +6,23 @@ import {EmployeeService} from './employee.service';
 @Component({
 	selector: 'list-employee',
 	templateUrl: './employeeList.component.html',
-	styleUrls: ['./employeeList.component.css'],
-	providers: [EmployeeService]
+	styleUrls: ['./employeeList.component.css']
 })
 export class EmployeeListComponent implements OnInit{
 	employees: IEmployee[];
 
 	selectedRadioButtonValue: string =  'All';
+	statusMessage: string =  'Loading Data. Please wait...';
 
 	constructor(private _employeeService: EmployeeService){
 		
 	}
 	ngOnInit(){
-		this._employeeService.getEmployees().subscribe((employeeData)=> this.employees = employeeData);
+		this._employeeService.getEmployees().subscribe((employeeData)=> this.employees = employeeData,
+							(error) => {
+								console.error(error);
+								this.statusMessage = 'Some Error Occured on Server. Please try again later';
+							});
 	}
 
 	trackByEmpCode(index: number, employee: any): string{

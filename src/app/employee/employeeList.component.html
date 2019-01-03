@@ -22,14 +22,21 @@
 		<ng-container *ngFor="let employee of employees; trackBy:trackByEmpCode;let i= index">
 			<tr *ngIf="selectedRadioButtonValue=='All' || selectedRadioButtonValue== employee.gender">
 				<td>{{i+1}}</td>
-				<td>{{employee.code}}</td>
+				<td >
+					<a [routerLink]="['/employees', employee.code]">
+						{{employee.code | uppercase}}
+					</a>
+				</td>
 				<td>{{employee.name | employeeTitle:employee.gender}}</td>
 				<td>{{employee.designation}}</td>
 				<td>{{employee.salary}}</td>
 				<td>{{employee.gender}}</td>
 			</tr>
 		</ng-container>
-		<tr *ngIf='!employees || employees.length==0'>
+		<tr *ngIf='!employees'>
+			<td colspan="5"> {{statusMessage}}</td>
+		</tr>
+		<tr *ngIf='employees && employees.length==0'>
 			<td colspan="5"> No data available</td>
 		</tr>
 	</tbody>

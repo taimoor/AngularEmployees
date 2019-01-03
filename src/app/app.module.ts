@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import {EmployeeComponent} from './employee/employee.component';
 import {EmployeeListComponent} from './employee/employeeList.component';
 import {EmployeeCountComponent} from './employee/employeeCount.component';
-
 import {EmployeeTitlePipe} from './employee/employeeTitle.pipe';
+import {HomeComponent} from './home/home.component';
+import { PageNotFoundComponent } from './others/page-not-found.component';
+import {EmployeeService} from './employee/employee.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {EmployeeTitlePipe} from './employee/employeeTitle.pipe';
     EmployeeComponent,
     EmployeeListComponent,
     EmployeeCountComponent,
-    EmployeeTitlePipe
+    EmployeeTitlePipe,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import {EmployeeTitlePipe} from './employee/employeeTitle.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
